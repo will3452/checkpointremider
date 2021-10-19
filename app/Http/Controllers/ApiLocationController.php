@@ -42,7 +42,7 @@ class ApiLocationController extends Controller
     }
     public function checkLocation()
     {
-        $user = User::find(auth()->user()->id ?? 1);
+        $user = User::find(auth()->user()->id);
         $checkpoints = Checkpoint::get();
 
         foreach ($checkpoints as $checkpoint) {

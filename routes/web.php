@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Laravel\Nova\Nova;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,6 @@ use Laravel\Nova\Nova;
  */
 
 Route::redirect('/', Nova::path());
+
+Route::get('/register', [RegisterController::class, 'showRegister']);
+Route::post('/register', [RegisterController::class, 'postRegister']);

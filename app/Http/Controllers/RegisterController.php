@@ -18,12 +18,15 @@ class RegisterController extends Controller
             'mobile_number'=>'required|unique:users,mobile_number',
             'email'=>'required|unique:users,email',
             'password'=>'required',
-            'name'=>'required'
+            'name'=>'required',
+            'picture'=>'required'
         ]);
+
+        $data['picture'] = $data['picture']->store('public');
 
         $data['password'] = bcrypt($data['password']);
 
-        $user = User::create($data);
+        User::create($data);
 
         return 'registered successfully please go back to the app and login!';
     }

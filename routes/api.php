@@ -24,5 +24,5 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::post('login', [ApiLoginController::class, 'login']);
 
 Route::get('/test', function () {
-    return 'oh yeah!';
+    return 'oh yeah! yes!';
 });

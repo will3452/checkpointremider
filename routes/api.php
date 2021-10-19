@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/check-location', [ApiLocationController::class, 'checkLocation']);
 });
 
+Route::get('/check-location', [ApiLocationController::class, 'checkLocation']);
+
 
 Route::post('login', [ApiLoginController::class, 'login']);
 

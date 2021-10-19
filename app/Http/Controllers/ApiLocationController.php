@@ -12,21 +12,21 @@ class ApiLocationController extends Controller
     {
         $ch = curl_init();
         $parameters = array(
-            'apikey' => 'aa075e52530841a7af97f19db9ef4fbd', //Your API KEY
+            'apikey' => config('semaphore.api_key'),
             'number' => $user->mobile_number,
-            'message' => "hello, $user->name you're close to checkpoint please ready the following requirement(s) : ".implode(', ',$checkpoint->requirements()->pluck('description')->toArray()),
-            'sendername' => 'SEMAPHORE'
+            'message' => "hello, $user->name you're about to checkpoint please ready the following requirement(s) : ".implode(', ', $checkpoint->requirements()->pluck('description')->toArray()),
+            'sendername' => config('semaphore.sender_name')
         );
-        curl_setopt( $ch, CURLOPT_URL,'https://semaphore.co/api/v4/messages' );
-        curl_setopt( $ch, CURLOPT_POST, 1 );
+        curl_setopt($ch, CURLOPT_URL, 'https://semaphore.co/api/v4/messages');
+        curl_setopt($ch, CURLOPT_POST, 1);
 
         //Send the parameters set above with the request
-        curl_setopt( $ch, CURLOPT_POSTFIELDS, http_build_query( $parameters ) );
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($parameters));
 
         // Receive response from server
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-        $output = curl_exec( $ch );
-        curl_close ($ch);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $output = curl_exec($ch);
+        curl_close($ch);
     }
     public function getDistance($lat1, $lng1, $lat2, $lng2)
     {
@@ -42,7 +42,7 @@ class ApiLocationController extends Controller
     }
     public function checkLocation()
     {
-        $user = User::find(auth()->user()->id);
+        $user = User::find(auth()->user()->id ?? 1);
         $checkpoints = Checkpoint::get();
 
         foreach ($checkpoints as $checkpoint) {
@@ -53,8 +53,8 @@ class ApiLocationController extends Controller
                 $checkpoint->long
             );
 
-            if($distance <= 300) {
-                if($user->sendable){
+            if ($distance <= 300) {
+                if ($user->sendable) {
                     $this->sendMessage($user, $checkpoint);
                     $user->update(['sendable'=>false]); //update flag
                 }
@@ -75,7 +75,7 @@ class ApiLocationController extends Controller
                     ]);
             }
         }
-        if(!$user->sendable){
+        if (!$user->sendable) {
             $user->update(['sendable'=>true]); //update flag
         }
         return response([

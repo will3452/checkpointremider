@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApiLocationController;
 use App\Http\Controllers\ApiLoginController;
+use App\Models\Checkpoint;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/check-location', [ApiLocationController::class, 'checkLocation']);
+
+    Route::get('/checkpoints', function () {
+        $checkpoints = Checkpoint::get();
+
+        return response([
+            'checkpoints'=>$checkpoints,
+        ], 200);
+    });
 });
 
 

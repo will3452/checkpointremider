@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
@@ -53,6 +54,8 @@ class User extends Resource
             Text::make('Mobile Number')
                 ->sortable()
                 ->rules('required', 'max:255'),
+
+            Boolean::make('Sendable'),
 
             Text::make('Email')
                 ->sortable()

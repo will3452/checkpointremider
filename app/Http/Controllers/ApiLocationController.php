@@ -40,6 +40,7 @@ class ApiLocationController extends Controller
         $x = atan((sqrt(1 - pow($x, 2))) / $x);
         return abs((1.852 * 60.0 * (($x/$pi) * 180)) / 1.609344) * 1609.34; // m
     }
+
     public function checkLocation()
     {
         $user = User::find(auth()->user()->id);
@@ -53,7 +54,7 @@ class ApiLocationController extends Controller
                 $checkpoint->long
             );
 
-            if ($distance <= 300) {
+            if ($distance <= 500) {
                 if ($user->sendable) {
                     $this->sendMessage($user, $checkpoint);
                     $user->update(['sendable'=>false]); //update flag

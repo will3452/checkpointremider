@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ApiLocationController;
-use App\Http\Controllers\ApiLoginController;
+use App\Models\User;
 use App\Models\Checkpoint;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiLoginController;
+use App\Http\Controllers\ApiLocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,12 @@ Route::post('login', [ApiLoginController::class, 'login']);
 
 Route::get('/test', function () {
     return 'oh yeah! yes!';
+});
+
+Route::get('/reset', function () {
+    User::update([
+        'sendable'=>true
+    ]);
+
+    return 'reset';
 });

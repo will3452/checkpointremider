@@ -59,7 +59,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             NewUserPerDay::make(),
-            NumberOfCheckpoint::make(),
+            NumberOfCheckpoint::make()
         ];
     }
 

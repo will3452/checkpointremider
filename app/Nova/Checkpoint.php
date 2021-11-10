@@ -42,10 +42,13 @@ class Checkpoint extends Resource
     {
         return [
             Text::make('Description'),
-            MapMarker::make('Location')
-                ->searchProvider('google')
-                ->latitude('lat')
-                ->longitude('long'),
+
+            Text::make('Latitude', 'lat')
+                ->rules(['required']),
+
+            Text::make('Longitude', 'long')
+                ->rules(['required']),
+
             BelongsToMany::make('Requirements'),
         ];
     }

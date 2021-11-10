@@ -38,9 +38,13 @@ Route::get('/test', function () {
 });
 
 Route::get('/reset', function () {
-    User::update([
-        'sendable'=>true
-    ]);
+    $users = User::get();
+
+    foreach ($users as $user) {
+        $user->update([
+            'sendable'=>true
+        ]);
+    }
 
     return 'reset';
 });

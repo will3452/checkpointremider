@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Nova\Metrics\NewUserPerDay;
+use App\Nova\Metrics\NumberOfCheckpoint;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
@@ -56,6 +58,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
+            NewUserPerDay::make(),
+            NumberOfCheckpoint::make(),
         ];
     }
 

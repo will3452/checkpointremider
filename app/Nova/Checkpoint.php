@@ -2,13 +2,15 @@
 
 namespace App\Nova;
 
-use GeneaLabs\NovaMapMarkerField\MapMarker;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\BelongsToMany;
+use GeneaLabs\NovaMapMarkerField\MapMarker;
+use Epartment\NovaDependencyContainer\HasDependencies;
 
 class Checkpoint extends Resource
 {
+    use HasDependencies;
     /**
      * The model the resource corresponds to.
      *
@@ -43,11 +45,10 @@ class Checkpoint extends Resource
         return [
             Text::make('Description'),
 
-            Text::make('Latitude', 'lat')
-                ->rules(['required']),
-
-            Text::make('Longitude', 'long')
-                ->rules(['required']),
+            MapMarker::make("Location")
+                ->latitude('lat')
+                ->longitude('long')
+                ->centerCircle(500, 'green', 'green', 0.2),
 
             BelongsToMany::make('Requirements'),
         ];

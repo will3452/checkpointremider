@@ -48,7 +48,7 @@ class Checkpoint extends Resource
             MapMarker::make("Location")
                 ->latitude('lat')
                 ->longitude('long')
-                ->centerCircle(500, 'green', 'green', 0.2),
+                ->centerCircle(500, 'green', 0, 0.2),
 
             BelongsToMany::make('Requirements'),
         ];

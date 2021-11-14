@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\BelongsToMany;
 use GeneaLabs\NovaMapMarkerField\MapMarker;
-use Epartment\NovaDependencyContainer\HasDependencies;
 
 class Checkpoint extends Resource
 {
-    use HasDependencies;
     /**
      * The model the resource corresponds to.
      *

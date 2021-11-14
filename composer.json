@@ -18,7 +18,8 @@
         "laravel/framework": "^8.54",
         "laravel/nova": "*",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "optimistdigital/nova-settings": "^3.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

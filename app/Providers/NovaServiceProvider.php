@@ -2,11 +2,13 @@
 
 namespace App\Providers;
 
-use App\Nova\Metrics\NewUserPerDay;
-use App\Nova\Metrics\NumberOfCheckpoint;
-use Illuminate\Support\Facades\Gate;
-use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
+use Laravel\Nova\Cards\Help;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Number;
+use App\Nova\Metrics\NewUserPerDay;
+use Illuminate\Support\Facades\Gate;
+use App\Nova\Metrics\NumberOfCheckpoint;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -19,6 +21,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        \OptimistDigital\NovaSettings\NovaSettings::addSettingsFields(function () {
+            return [
+              Number::make('Checkpoint (Radius in Meter)', 'radius_meter'),
+            ];
+        });
     }
 
     /**
@@ -80,7 +88,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            new \OptimistDigital\NovaSettings\NovaSettings
+        ];
     }
 
     /**

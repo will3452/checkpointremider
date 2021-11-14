@@ -54,7 +54,7 @@ class ApiLocationController extends Controller
                 $checkpoint->long
             );
 
-            if ($distance <= 500) {
+            if ($distance <= (nova_get_setting('radius_meter', 500) + 200)) {
                 if ($user->sendable) {
                     $this->sendMessage($user, $checkpoint);
                     $user->update(['sendable'=>false]); //update flag

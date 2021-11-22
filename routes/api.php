@@ -48,3 +48,10 @@ Route::get('/reset', function () {
 
     return 'reset';
 });
+
+Route::get('/checkpoints', function () {
+    $checkpoints = Checkpoint::with('requirements')->get();
+    return response([
+            'checkpoints' => $checkpoints,
+        ], 200);
+});

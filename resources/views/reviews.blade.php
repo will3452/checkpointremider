@@ -8,7 +8,7 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="flex items-center justify-center h-screen bg-green-100">
-    <div class="shadow mx-auto rounded p-4 md:w-1/2 w-full bg-white h-screen">
+    <div class="shadow mx-auto rounded p-4 md:w-1/2 w-full bg-white ">
         <div class="p-4 rounded shadow">
             <h2 class="text-lg font-bold">Checkpoint Details</h2>
             <div>

@@ -37,7 +37,7 @@
         <div class="h-36 border overflow-y">
             @forelse ($checkpoint->reviews as $item)
                 <div class="p-2 shadow rounded my-2">
-                    <h4>
+                    <h4 class="font-bold">
                         {{$item->user->name}}
                     </h4>
                     <div>

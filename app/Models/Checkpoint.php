@@ -18,4 +18,9 @@ class Checkpoint extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function getAverageStarAttribute()
+    {
+        return $this->reviews()->avg('star');
+    }
 }

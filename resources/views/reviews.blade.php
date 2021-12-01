@@ -58,14 +58,14 @@
                 <label for="">
                     Star
                 </label>
-                <select name="star" id="" class="w-full block" required>
+                <select name="star" id="" class="w-full block border rounded" required>
                     <option value="1">1 Star</option>
                     <option value="2">2 Star</option>
                     <option value="3">3 Star</option>
                     <option value="4">4 Star</option>
                     <option value="5">5 Star</option>
                 </select>
-                <textarea name="comment" id="" maxlength="200" class="w-full block" required></textarea>
+                <textarea name="comment" id="" maxlength="200" class=" border roundedw-full block" required></textarea>
                 <button class="bg-green-300 text-white p-1 px-3 rounded">
                     Submit
                 </button>

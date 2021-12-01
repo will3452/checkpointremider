@@ -34,7 +34,7 @@
         <h4 class="my-2 text-center font-bold">
             Reviews
         </h4>
-        <div class="h-1/3">
+        <div class="h-1/3 border overflow-y">
             @forelse ($checkpoint->reviews as $item)
                 <div class="p-2 shadow rounded my-2">
                     <h4>
@@ -53,6 +53,25 @@
             </div>
             @endforelse
         </div>
+        <form action="" class="h-2/3">
+            <div>
+                input
+                <label for="">
+                    Star
+                </label>
+                <select name="star" id="" class="w-full block" required>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Star</option>
+                    <option value="3">3 Star</option>
+                    <option value="4">4 Star</option>
+                    <option value="5">5 Star</option>
+                </select>
+                <textarea name="comment" id="" maxlength="200" class="w-full block" required></textarea>
+                <button class="bg-green-300 text-white p-1 px-3 rounded">
+                    Submit
+                </button>
+            </div>
+        </form>
     </div>
 </body>
 </html>

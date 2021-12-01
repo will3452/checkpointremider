@@ -53,7 +53,7 @@
             </div>
             @endforelse
         </div>
-        <form action="" class="h-48 p-2 shadow rounded mt-4 ">
+        <form action="" class="h-28 p-2 shadow rounded mt-4 ">
             <div>
                 <label class="font-bold" for="">
                     Choose Star

@@ -54,7 +54,7 @@
             @endforelse
         </div>
         <form action="" class="">
-            <h4 class="text-lg font-bold">
+            <h4 class="text-lg font-bold my-4 text-center">
                 Submit Feedback
             </h4>
             <div>

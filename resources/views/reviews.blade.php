@@ -55,8 +55,8 @@
         </div>
         <form action="" class="h-50 p-2 shadow rounded mt-4 ">
             <div>
-                <label for="">
-                    Star
+                <label class="font-bold" for="">
+                    Choose Star
                 </label>
                 <select name="star" id="" class="w-full block border rounded" required>
                     <option value="1">1 Star</option>
@@ -65,6 +65,10 @@
                     <option value="4">4 Star</option>
                     <option value="5">5 Star</option>
                 </select>
+                <br/>
+                <label for="" class="font-bold">
+                    Write Comment/Feedback
+                </label>
                 <textarea name="comment" id="" maxlength="200" class=" border roundedw-full block" required></textarea>
                 <button class="bg-green-300 text-white p-1 px-3 rounded">
                     Submit

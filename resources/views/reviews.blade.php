@@ -20,7 +20,7 @@
             <div>
                 <h3>List of requirements: </h3>
                 <ul>
-                    @foreach ($checkpoints->requirements as $requirement)
+                    @foreach ($checkpoint->requirements as $requirement)
                         <li class="p-2 rounded my-1 shadow">
                             {{$requirement->description}}
                         </li>

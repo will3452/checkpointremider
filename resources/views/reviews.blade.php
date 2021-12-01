@@ -47,7 +47,7 @@
                         {{$item->comment}}
                     </div>
                 </div>
-            @else
+            @empty
             <div class="p-2 text-center rounded bg-gray-100">
                 No Reviews
             </div>

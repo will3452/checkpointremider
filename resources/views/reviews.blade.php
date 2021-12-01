@@ -18,6 +18,9 @@
                 Coordinates:  {{$checkpoint->lat}}, {{$checkpoint->long}}
             </div>
             <div>
+                Ratings: {{$checkpoint->average_star}}
+            </div>
+            <div>
                 <h3 class="font-bold">List of requirements: </h3>
                 <ul>
                     @foreach ($checkpoint->requirements as $requirement)
@@ -27,15 +30,12 @@
                     @endforeach
                 </ul>
             </div>
-            <div>
-                Ratings: {{$checkpoint->average_star}}
-            </div>
         </div>
         <h4 class="my-2 text-center font-bold">
             Reviews
         </h4>
         <div class="h-1/3">
-            @foreach ($checkpoint->reviews as $item)
+            @forelse ($checkpoint->reviews as $item)
                 <div class="p-2 shadow rounded my-2">
                     <h4>
                         {{$item->user->name}}
@@ -47,7 +47,11 @@
                         {{$item->comment}}
                     </div>
                 </div>
-            @endforeach
+            @else
+            <div class="p-2 text-center rounded bg-gray-100">
+                No Reviews
+            </div>
+            @endforelse
         </div>
     </div>
 </body>

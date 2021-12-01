@@ -53,9 +53,8 @@
             </div>
             @endforelse
         </div>
-        <form action="" class="h-2/3">
+        <form action="" class="h-2/3 p-2 shadow rounded">
             <div>
-                input
                 <label for="">
                     Star
                 </label>

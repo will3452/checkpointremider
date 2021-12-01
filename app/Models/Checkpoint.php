@@ -13,4 +13,9 @@ class Checkpoint extends Model
     {
         return $this->belongsToMany(Requirement::class);
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

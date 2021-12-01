@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Registration form</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="flex items-center justify-center h-screen bg-green-100">
-    <div class="shadow mx-2 rounded p-4 w-full bg-white">
-        <h1 class="text-2xl font-bold uppercase text-green-900">Register</h1>
+    <div class="shadow mx-auto rounded p-4 md:w-1/2 w-full bg-white">
+        <h1 class="text-2xl font-bold uppercase text-green-900">Registration Form</h1>
         <form action="/register" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mt-4">
@@ -53,6 +53,12 @@
                 @error('password')
                     <small class="text-xs font-bold text-red-500">{{$message}}</small>
                 @enderror
+            </div>
+            <div class="mt-4">
+                <label for="" class="text-sm font-bold text-gray-800">
+                    Confirm Password
+                </label>
+                <input type="password" name="password_confirmation" required class="block w-full border border-green-600 rounded p-2 placeholder-green-200" placeholder="********">
             </div>
             <div class="mt-4">
                 <button class="text-center p-2 rounded bg-green-600 font-bold uppercase text-white">Register</button>

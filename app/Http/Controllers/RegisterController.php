@@ -17,7 +17,7 @@ class RegisterController extends Controller
         $data = request()->validate([
             'mobile_number'=>'required|unique:users,mobile_number',
             'email'=>'required|unique:users,email',
-            'password'=>'required',
+            'password'=>'required|confirmed',
             'name'=>'required',
             'picture'=>'required'
         ]);

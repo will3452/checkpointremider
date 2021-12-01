@@ -53,7 +53,10 @@
             </div>
             @endforelse
         </div>
-        <form action="" class="h-28 p-2 shadow rounded mt-4 ">
+        <form action="" class="">
+            <h4 class="text-lg font-bold">
+                Submit Feedback
+            </h4>
             <div>
                 <label class="font-bold" for="">
                     Choose Star

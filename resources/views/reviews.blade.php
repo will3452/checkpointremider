@@ -10,7 +10,7 @@
 <body class="flex items-center justify-center h-screen bg-green-100">
     <div class="shadow mx-auto rounded p-4 md:w-1/2 w-full bg-white">
         <div class="p-4 rounded shadow">
-            <h2 class="text-lg font-bold text-gray-500 font-bold">Checkpoint Details</h2>
+            <h2 class="text-lg font-bold text-gray-500 ">Checkpoint Details</h2>
             <div>
                 Description :  {{$checkpoint->description}}
             </div>
@@ -18,7 +18,7 @@
                 Coordinates:  {{$checkpoint->lat}}, {{$checkpoint->long}}
             </div>
             <div>
-                <h3>List of requirements: </h3>
+                <h3 class="font-bold">List of requirements: </h3>
                 <ul>
                     @foreach ($checkpoint->requirements as $requirement)
                         <li class="p-2 rounded my-1 shadow">

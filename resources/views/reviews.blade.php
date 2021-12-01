@@ -8,9 +8,9 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="flex items-center justify-center h-screen bg-green-100">
-    <div class="shadow mx-auto rounded p-4 md:w-1/2 w-full bg-white">
+    <div class="shadow mx-auto rounded p-4 md:w-1/2 w-full bg-white h-screen">
         <div class="p-4 rounded shadow">
-            <h2 class="text-lg font-bold text-gray-500 h-screen">Checkpoint Details</h2>
+            <h2 class="text-lg font-bold text-gray-500 ">Checkpoint Details</h2>
             <div>
                 Description :  {{$checkpoint->description}}
             </div>

@@ -53,7 +53,9 @@
             </div>
             @endforelse
         </div>
-        <form action="" class="">
+        <form action="/reviews" class="">
+            <input type="hidden" name="user_id" value="{{$user->id}}">
+            <input type="hidden" name="checkpoint_id" value="{{$checkpoint->id}}">
             <h4 class="text-lg font-bold my-4 text-center">
                 Submit Feedback
             </h4>

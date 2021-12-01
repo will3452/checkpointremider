@@ -22,3 +22,4 @@ Route::get('/register', [RegisterController::class, 'showRegister']);
 Route::post('/register', [RegisterController::class, 'postRegister']);
 
 Route::get('/reviews/{user}', [ReviewController::class, 'getReviews']);
+Route::post('/reviews', [ReviewController::class, 'postReview']);

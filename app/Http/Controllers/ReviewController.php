@@ -13,7 +13,7 @@ class ReviewController extends Controller
     {
         $id = request()->checkpoint_id;
         $checkpoint = Checkpoint::findOrFail($id)->first();
-        return view('reviews', compact('checkpoint', $user));
+        return view('reviews', compact('checkpoint', 'user'));
     }
 
     public function postReview()

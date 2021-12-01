@@ -34,7 +34,7 @@
         <h4 class="my-2 text-center font-bold">
             Reviews
         </h4>
-        <div class="h-36 border overflow-y">
+        <div class="h-36 border overflow-y-auto">
             @forelse ($checkpoint->reviews as $item)
                 <div class="p-2 shadow rounded my-2">
                     <h4 class="font-bold">

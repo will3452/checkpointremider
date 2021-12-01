@@ -41,7 +41,7 @@
                         {{$item->user->name}}
                     </h4>
                     <div>
-                        {{$item->start}} {{$item->star > 1 ? 'stars' : 'star'}}
+                        {{$item->star}} {{$item->star > 1 ? 'stars' : 'star'}}
                     </div>
                     <div class="">
                         {{$item->comment}}

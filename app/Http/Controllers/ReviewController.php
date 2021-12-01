@@ -10,7 +10,8 @@ class ReviewController extends Controller
 {
     public function getReviews(User $user)
     {
-        $checkpoint = Checkpoint::findOrFail(request()->checkpoint_id)->first();
+        $id = request()->checkpoint_id;
+        $checkpoint = Checkpoint::findOrFail($id)->first();
         return view('reviews', compact('checkpoint', $user));
     }
 }

@@ -43,7 +43,7 @@
                     <div>
                         {{$item->star}} {{$item->star > 1 ? 'stars' : 'star'}}
                     </div>
-                    <div class="">
+                    <div class="border rounded p-2">
                         {{$item->comment}}
                     </div>
                 </div>

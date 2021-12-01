@@ -73,7 +73,7 @@
                     Write Comment/Feedback
                 </label>
                 <textarea name="comment" id="" maxlength="200" class="w-full border roundedw-full block" required></textarea>
-                <button class="bg-green-300 text-white p-1 px-3 rounded mt-2">
+                <button class="block bg-green-300 text-white p-1 px-3 rounded mt-2">
                     Submit
                 </button>
             </div>

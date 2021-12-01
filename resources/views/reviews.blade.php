@@ -31,7 +31,7 @@
                 Ratings: {{$checkpoint->average_star}}
             </div>
         </div>
-        <h4>
+        <h4 class="my-2 text-center font-bold">
             Reviews
         </h4>
         <div class="h-1/3">

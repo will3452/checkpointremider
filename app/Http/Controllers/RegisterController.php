@@ -12,6 +12,11 @@ class RegisterController extends Controller
         return view("register");
     }
 
+    public function showAdminRegister()
+    {
+        return view("admin-register");
+    }
+
     public function postRegister()
     {
         $data = request()->validate([
@@ -29,5 +34,20 @@ class RegisterController extends Controller
         User::create($data);
 
         return 'registered successfully please go back to the app and login!';
+    }
+
+    public function postAdminRegister()
+    {
+        $data = request()->validate([
+            'email'=>'required|unique:users,email',
+            'password'=>'required|confirmed',
+            'name'=>'required',
+        ]);
+
+        $data['password'] = bcrypt($data['password']);
+
+        User::create($data);
+
+        return 'registered successfully <a href="/">Login now</a>';
     }
 }

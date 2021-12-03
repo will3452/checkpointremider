@@ -55,7 +55,7 @@
         {{ __('Login') }}
     </button>
 
-    <a href="/register" class="w-full btn btn-default block text-center mt-2 " type="submit">
+    <a href="/admin-register" class="w-full btn btn-default block text-center mt-2 " type="submit">
         {{ __('Register') }}
     </a>
 </form>

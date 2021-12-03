@@ -19,7 +19,9 @@ use App\Http\Controllers\ReviewController;
 Route::redirect('/', Nova::path());
 
 Route::get('/register', [RegisterController::class, 'showRegister']);
+Route::get('/admin-register', [RegisterController::class, 'showAdminRegister']);
 Route::post('/register', [RegisterController::class, 'postRegister']);
+Route::post('/admin-register', [RegisterController::class, 'postAdminRegister']);
 
 Route::get('/reviews/{user}', [ReviewController::class, 'getReviews']);
 Route::post('/reviews', [ReviewController::class, 'postReview']);

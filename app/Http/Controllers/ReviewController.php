@@ -12,7 +12,7 @@ class ReviewController extends Controller
     public function getReviews(User $user)
     {
         $id = request()->checkpoint_id;
-        $checkpoint = Checkpoint::findOrFail($id)->first();
+        $checkpoint = Checkpoint::findOrFail($id);
         return view('reviews', compact('checkpoint', 'user'));
     }
 
